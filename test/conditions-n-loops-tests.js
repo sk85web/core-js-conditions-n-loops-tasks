@@ -74,6 +74,7 @@ describe('core-js-conditions-n-loops', () => {
       );
       assert.equal(
         tasks.canQueenCaptureKing({ x: 6, y: 4 }, { x: 3, y: 7 }),
+
         true
       );
       assert.equal(

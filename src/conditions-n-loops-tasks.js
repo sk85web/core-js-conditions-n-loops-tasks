@@ -62,10 +62,20 @@ function getMaxNumber(a, b, c) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
-}
+function canQueenCaptureKing(queen, king) {
+  const queenValues = Object.values(queen);
+  const kingValues = Object.values(king);
 
+  if (
+    queenValues[0] === kingValues[0] ||
+    queenValues[1] === kingValues[1] ||
+    queenValues[0] - queenValues[1] === kingValues[0] - kingValues[1] ||
+    queenValues[1] - kingValues[0] === 1
+  )
+    return true;
+
+  return false;
+}
 /**
  * Determines whether a triangle is isosceles based on its side lengths.
  * In this task, the use of methods of the String and Array classes is not allowed.
